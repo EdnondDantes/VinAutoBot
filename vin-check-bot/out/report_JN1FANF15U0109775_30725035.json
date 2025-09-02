@@ -1,0 +1,1462 @@
+{
+  "Result": {
+    "data": {
+      "GosnumberData": {
+        "RegHistory": {
+          "ServicerequestId": 1365641450,
+          "ServicerequestCacheId": 0,
+          "ServicerequestTakeId": 1365641450,
+          "GosnumberList": [
+            "С164ОН70",
+            "Е153ВС123"
+          ]
+        },
+        "DtpData": {
+          "ServicerequestId": 1365641454,
+          "ServicerequestWithMaxDtpId": 0,
+          "SimpleNumber": "",
+          "HybridMosruData": null
+        },
+        "SearchData": {
+          "ServicerequestId": 1365641459,
+          "PreviosServicerequestId": 0
+        },
+        "RestrictData": {
+          "ServicerequestId": 1365641466,
+          "PreviosServicerequestId": 0
+        },
+        "OsagoData": {
+          "AutoinsId": 9166703,
+          "AutoinsIds": null,
+          "RsaIds": [
+            16664776
+          ]
+        },
+        "GosnumberData": {
+          "GosnumberList": [
+            {
+              "StsList": [
+                "9914339191"
+              ],
+              "Gosnumber": "С164ОН70",
+              "FriId": 0
+            },
+            {
+              "StsList": [],
+              "Gosnumber": "Е153ВС123",
+              "FriId": 0
+            }
+          ]
+        },
+        "OffersData": {
+          "AdditionaUrlList": [],
+          "TMessageData": {
+            "TMessageList": [],
+            "NotAll": false
+          }
+        },
+        "ZalogData": {
+          "ListZalog": [
+            {
+              "Id": 8513869,
+              "Type": 1
+            },
+            {
+              "Id": 8513869,
+              "Type": 1
+            }
+          ],
+          "ListPreviosZalog": []
+        },
+        "isFreePromoJan": false,
+        "OrderRemontKey": null,
+        "FSDiagnosticCardsId": 0
+      },
+      "Title": "Отчет по VIN: JN1FANF15U0109775",
+      "ReportDate": "2025-08-28T21:59:51",
+      "ReportNumber": 30725035,
+      "WhereVin": {
+        "Title": "🔎 Где VIN у NISSAN Juke",
+        "Url": "https://t.me/naytivin/134",
+        "Generation": "I"
+      },
+      "MainImage": "https://cdn3.tronk.info/static/imagegn/992ed127-07b3-41e9-ada5-ee4e453b22fe.jpg?width=800&height=400",
+      "IsTotalCar": false,
+      "MoreData": {
+        "GosnumberData": [],
+        "DtpData": {
+          "Significant": false
+        },
+        "OffersData": [],
+        "LinksData": {
+          "RepairsLink": null
+        },
+        "CommentsData": [],
+        "UpdateBlocks": {
+          "RegHistory": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "2025-08-28T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Dtp": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "0001-01-01T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Search": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "0001-01-01T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Restrict": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "0001-01-01T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Osago": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": true,
+            "Credate": "2025-08-26T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Zalog": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "2025-08-28T22:00:05",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Elpts": {
+            "Error": false,
+            "ErrorMsg": "",
+            "NeedUpdate": false,
+            "Credate": "0001-01-01T00:00:00",
+            "IsSrvAvail": false,
+            "Previos": null
+          },
+          "Wait": {},
+          "Generating": {}
+        }
+      },
+      "OsagoData": {
+        "ErrorMessage": null,
+        "PoliceList": [
+          {
+            "Type": 0,
+            "LogoUrl": null,
+            "CompanyName": "Публичное акционерное общество \"Страховая акционерная компания \"ЭНЕРГОГАРАНТ\"",
+            "Serial": "ТТТ",
+            "Number": "7077162915",
+            "HasRestrict": false,
+            "DogovorState": "Действует",
+            "DogovorActivPeriod": "Период использования ТС активен на запрашиваемую дату",
+            "HasTrailer": false,
+            "PurposeOfUse": "",
+            "UsersInfo": "",
+            "PolicyOwner": "",
+            "PolicyOwnerInn": null,
+            "PolicyOwnerLink": "",
+            "CarOwner": "",
+            "CarOwnerInn": "",
+            "CarOwnerLink": "",
+            "Kbm": "",
+            "Region": "",
+            "PolicySum": "0",
+            "IsCompany": false,
+            "CarInfo": [
+              {
+                "Name": "Марка и модель транспортного средства",
+                "Value": "Nissan Juke"
+              },
+              {
+                "Name": "VIN",
+                "Value": "JN1FANF15U01*****"
+              },
+              {
+                "Name": "Государственный регистрационный знак",
+                "Value": "Н5***С70"
+              }
+            ],
+            "OsagoBso": null,
+            "OsagoPolice": null
+          }
+        ]
+      },
+      "HasOsago": true,
+      "OsagoRequestDate": "2025-08-26T16:06:34",
+      "FinesImages": [],
+      "RequestDate": {
+        "Dtp": "2025-08-28T13:07:33",
+        "Search": "2025-08-28T13:07:34",
+        "Restrict": "2025-08-28T13:07:37",
+        "Zalog": {
+          "ZalogRequestDate": "2025-08-28T22:00:05",
+          "ZalogPreviosRequestDate": "0001-01-01T00:00:00"
+        },
+        "RegHistory": "2025-08-28T00:00:00"
+      },
+      "Repairs": {
+        "List": [],
+        "IsRepairs": false
+      },
+      "AuctionsAUD": {
+        "List": [],
+        "IsAuctions": false
+      },
+      "HasLinkParkon": false,
+      "CarInfo": {
+        "Marka": "NISSAN",
+        "Model": "JUKE"
+      },
+      "isDemo": false,
+      "FirstImageId": 353769653,
+      "FirstImageTitle": "Nissan/Juke, 30.08.2020",
+      "MarkaLogoUrl": "https://data.tronk.info/brand2/nissan.png",
+      "Probeg": 39314,
+      "ProbegDate": "2021-03-16T08:15:19",
+      "ProbegChanged": false,
+      "HasDtp": true,
+      "HasTaxi": false,
+      "HasManyTaxi": false,
+      "HasRepairs": false,
+      "isFreePromoJan": false,
+      "UsedInCarsharing": false,
+      "UsedInCarsharingPossibly": false,
+      "ZalogRegistrState": 0,
+      "HasRestrict": false,
+      "StudyDriving": false,
+      "HasFine": false,
+      "HasActualFine": false,
+      "HasFsspFine": false,
+      "HasParkingFine": false,
+      "GosnumberList": [
+        "С164ОН70",
+        "Е153ВС123"
+      ],
+      "Vin": "JN1FANF15U0109775",
+      "GidbbRegHistory": {
+        "ErrorMsg": null,
+        "Status": "Действующая",
+        "Eco": "ЧЕТВЕРТЫЙ/4",
+        "MarkaModel": "НИССАН ЖУК ",
+        "Year": "2011",
+        "CategoryTs": "Легковой универсал",
+        "BodyNumber": "JN1FANF15U0109775",
+        "Color": "Красный",
+        "EngineVolume": "1618",
+        "Power": "190 л.с. / 139,7 кВт",
+        "EngineNumber": null,
+        "Type": null,
+        "PTS": null,
+        "HasDublicatePTS": false,
+        "Maxmass": "1860",
+        "Unloadedmass": "1455",
+        "OwnershipPeriods": [
+          {
+            "StartDate": "2012-01-14T00:00:00",
+            "FinishDate": "2020-02-19T00:00:00",
+            "OwnerTime": "8 лет 36 дней",
+            "DtpCount": 2,
+            "LastOperation": null,
+            "PersonType": "Физическое лицо",
+            "Region": "Южный, Краснодарский край, Западный краснодара район, Краснодар",
+            "Gosnumber": null,
+            "Link": null
+          },
+          {
+            "StartDate": "2020-02-20T00:00:00",
+            "FinishDate": "0001-01-01T00:00:00",
+            "OwnerTime": "5 лет 189 дней",
+            "DtpCount": 0,
+            "LastOperation": null,
+            "PersonType": "Физическое лицо",
+            "Region": "Сибирский, Томская область, Томск",
+            "Gosnumber": null,
+            "Link": null
+          }
+        ],
+        "OwnershipPeriodCount": 2,
+        "OwnershipTotalDays": 4974,
+        "TechParams": {
+          "GearType": "Передний",
+          "EngineType": "Бензин",
+          "Transmission": "Вариатор",
+          "Generation": "I (2010-2014)"
+        }
+      },
+      "Elpts": {
+        "Number": null,
+        "Status": null,
+        "PaymentInfo": null,
+        "ReleaseDetails": null,
+        "CustomsRestrictions": null,
+        "OtherRestrictions": null,
+        "LastActionInfo": null
+      },
+      "CarPriceInfo": null,
+      "ProbegList": [
+        {
+          "Date": "2021-03-16T08:15:19",
+          "Probeg": 39314,
+          "Source": 5
+        },
+        {
+          "Date": "2019-11-16T00:00:00",
+          "Probeg": 29599,
+          "Source": 5
+        },
+        {
+          "Date": "2018-11-26T00:00:00",
+          "Probeg": 29599,
+          "Source": 5
+        },
+        {
+          "Date": "2016-11-29T00:00:00",
+          "Probeg": 29599,
+          "Source": 5
+        }
+      ],
+      "GibddList": [
+        {
+          "Gosnomer": "С164ОН70",
+          "Car": "NISSAN JUKE",
+          "DateOperation": "0001-01-01T00:00:00",
+          "Year": 0,
+          "OwnerF": "",
+          "OwnerN": "Юлия",
+          "OwnerO": "",
+          "OwnerDate": 0,
+          "OwnerBd": "0001-01-01T00:00:00",
+          "Phone": null,
+          "Vin": "JN1FANF15U0109775",
+          "BodyNumber": null,
+          "Sts": null,
+          "Pts": null,
+          "Price": 0,
+          "Police": null,
+          "Image": null,
+          "Inn": null
+        },
+        {
+          "Gosnomer": "С164ОН70",
+          "Car": "NISSAN JUKE",
+          "DateOperation": "0001-01-01T00:00:00",
+          "Year": 0,
+          "OwnerF": "",
+          "OwnerN": "Юлия",
+          "OwnerO": "",
+          "OwnerDate": 0,
+          "OwnerBd": "0001-01-01T00:00:00",
+          "Phone": null,
+          "Vin": "JN1FANF15U0109775",
+          "BodyNumber": null,
+          "Sts": null,
+          "Pts": null,
+          "Price": 0,
+          "Police": null,
+          "Image": null,
+          "Inn": null
+        },
+        {
+          "Gosnomer": "С164ОН70",
+          "Car": "NISSAN JUKE",
+          "DateOperation": "0001-01-01T00:00:00",
+          "Year": 0,
+          "OwnerF": "",
+          "OwnerN": "Юлия",
+          "OwnerO": "",
+          "OwnerDate": 0,
+          "OwnerBd": "0001-01-01T00:00:00",
+          "Phone": null,
+          "Vin": "JN1FANF15U0109775",
+          "BodyNumber": null,
+          "Sts": null,
+          "Pts": null,
+          "Price": 0,
+          "Police": null,
+          "Image": null,
+          "Inn": null
+        },
+        {
+          "Gosnomer": "С164ОН70",
+          "Car": "NISSAN JUKE",
+          "DateOperation": "0001-01-01T00:00:00",
+          "Year": 0,
+          "OwnerF": "",
+          "OwnerN": "Юлия",
+          "OwnerO": "",
+          "OwnerDate": 0,
+          "OwnerBd": "0001-01-01T00:00:00",
+          "Phone": null,
+          "Vin": "JN1FANF15U0109775",
+          "BodyNumber": null,
+          "Sts": null,
+          "Pts": null,
+          "Price": 0,
+          "Police": null,
+          "Image": null,
+          "Inn": null
+        },
+        {
+          "Gosnomer": "С164ОН70",
+          "Car": "NISSAN JUKE",
+          "DateOperation": "0001-01-01T00:00:00",
+          "Year": 0,
+          "OwnerF": "",
+          "OwnerN": "Юлия",
+          "OwnerO": "",
+          "OwnerDate": 0,
+          "OwnerBd": "0001-01-01T00:00:00",
+          "Phone": null,
+          "Vin": "JN1FANF15U0109775",
+          "BodyNumber": null,
+          "Sts": null,
+          "Pts": null,
+          "Price": 0,
+          "Police": null,
+          "Image": null,
+          "Inn": null
+        }
+      ],
+      "GibddListTotal": 6,
+      "DtpCount": 2,
+      "GibddDtp": {
+        "ErrorMsg": null,
+        "Accindents": [
+          {
+            "Number": "030042786",
+            "Type": "Столкновение",
+            "Date": "2016-05-26T15:40:00",
+            "State": "Повреждено",
+            "Region": "Краснодарский край",
+            "Marka": "NISSAN",
+            "Model": "Прочие марки Nissan",
+            "SchemaPicUrl": "https://i.avinforpt.com/image/dtpdamagepoints?points=01&svg=1",
+            "AccidentPlace": "Прикубанский, Краснодар, Краснодарский край, ЮФО",
+            "VehicleAmount": 2,
+            "VehicleSort": 2,
+            "DamageDestription": null,
+            "VehicleYear": 2011,
+            "OwnerOkopf": null,
+            "OtherDatamagesText": null,
+            "Participants": [
+              {
+                "Vin": "WVWZZZ3CZGE125306",
+                "Gosnubmer": "М480РО123",
+                "MarkaAndModel": "VOLKSWAGEN PASSAT 2015г."
+              },
+              {
+                "Vin": "JN1FANF15U0109775",
+                "Gosnubmer": "С164ОН70",
+                "MarkaAndModel": "NISSAN JUKE 2011г."
+              }
+            ],
+            "ParticipantsCount": 2,
+            "Card": null
+          },
+          {
+            "Number": "030102463",
+            "Type": "Наезд на стоящее ТС",
+            "Date": "2015-11-25T15:00:00",
+            "State": "Повреждено",
+            "Region": "Краснодарский край",
+            "Marka": "NISSAN",
+            "Model": "Прочие модели Nissan",
+            "SchemaPicUrl": "https://i.avinforpt.com/image/dtpdamagepoints?points=07&svg=1",
+            "AccidentPlace": "Прикубанский, Краснодар, Краснодарский край, ЮФО",
+            "VehicleAmount": 2,
+            "VehicleSort": 1,
+            "DamageDestription": null,
+            "VehicleYear": 2011,
+            "OwnerOkopf": null,
+            "OtherDatamagesText": null,
+            "Participants": [
+              {
+                "Vin": "KNAJT811BB7720930",
+                "Gosnubmer": "С698УО93",
+                "MarkaAndModel": "KIA SOUL 2010г."
+              },
+              {
+                "Vin": "JN1FANF15U0109775",
+                "Gosnubmer": "С164ОН70",
+                "MarkaAndModel": "NISSAN JUKE 2011г."
+              }
+            ],
+            "ParticipantsCount": 2,
+            "Card": null
+          }
+        ],
+        "AccindentsData": [
+          {
+            "Number": "030042786",
+            "Participants": [
+              {
+                "Vin": "WVWZZZ3CZGE125306",
+                "DamagePoints": [
+                  "02"
+                ],
+                "SrId": 1046407573,
+                "IsCheck": true
+              }
+            ]
+          },
+          {
+            "Number": "030102463",
+            "Participants": [
+              {
+                "Vin": "KNAJT811BB7720930",
+                "DamagePoints": [
+                  "03"
+                ],
+                "SrId": 1048800096,
+                "IsCheck": true
+              }
+            ]
+          }
+        ]
+      },
+      "OtherSourceDtp": [
+        {
+          "Vin": "JN1FANF15U0109775",
+          "Gosnumber": "Е153ВС123",
+          "Date": "26.05.2016"
+        }
+      ],
+      "EaistoList": [
+        {
+          "Gosnumber": "С164ОН70",
+          "Vin": "JN1FANF15U0109775",
+          "MarkaModel": "NISSAN Juke",
+          "Year": 0,
+          "Probeg": 39314,
+          "Kuzov": "JN1FANF15U0109775",
+          "Rama": null,
+          "DocNumber": "111281012100056",
+          "Date": "2021-03-16T08:15:19",
+          "DateExpire": "2022-03-16T08:15:19"
+        },
+        {
+          "Gosnumber": "Е153ВС123",
+          "Vin": "JN1FANF15U0109775",
+          "MarkaModel": null,
+          "Year": 0,
+          "Probeg": 29599,
+          "Kuzov": "JN1FANF15U0109775",
+          "Rama": null,
+          "DocNumber": "085400021900435",
+          "Date": "2019-11-16T00:00:00",
+          "DateExpire": "2020-11-17T00:00:00"
+        },
+        {
+          "Gosnumber": "Е153ВС123",
+          "Vin": "JN1FANF15U0109775",
+          "MarkaModel": null,
+          "Year": 0,
+          "Probeg": 29599,
+          "Kuzov": "JN1FANF15U0109775",
+          "Rama": null,
+          "DocNumber": "094140011802823",
+          "Date": "2018-11-26T00:00:00",
+          "DateExpire": "2019-11-27T00:00:00"
+        },
+        {
+          "Gosnumber": "Е153ВС123",
+          "Vin": "JN1FANF15U0109775",
+          "MarkaModel": null,
+          "Year": 0,
+          "Probeg": 29599,
+          "Kuzov": "JN1FANF15U0109775",
+          "Rama": null,
+          "DocNumber": "201611291416169472203",
+          "Date": "2016-11-29T00:00:00",
+          "DateExpire": "2018-11-29T00:00:00"
+        }
+      ],
+      "CarpriceView": null,
+      "Osago": null,
+      "OsagoTs": null,
+      "OsagoBso": null,
+      "OfferList": [],
+      "GibddSearch": {
+        "ErrorMessage": null,
+        "Rows": [],
+        "PreviosRows": null,
+        "PreviosServicerequestId": 0
+      },
+      "GibddRestrict": {
+        "ErrorMessage": null,
+        "Rows": [],
+        "PreviosServicerequestId": 0,
+        "NotAll": false,
+        "TotalRows": 0,
+        "TotalSumm": 0,
+        "PreviosRows": null
+      },
+      "ZalogCount": 0,
+      "ZalogRegistrList": null,
+      "ZalogRegistrPrevios": [],
+      "ZalogRegistrPreviosDate": "0001-01-01T00:00:00",
+      "TaxiList": [],
+      "FsspFineGibdd": null,
+      "FineGibdd": null,
+      "VinData": [
+        {
+          "Key": "Идентификационный номер",
+          "Value": "JN1FANF15U0109775"
+        },
+        {
+          "Key": "Марка",
+          "Value": "NISSAN"
+        },
+        {
+          "Key": "Модель",
+          "Value": "Juke"
+        },
+        {
+          "Key": "Код модели",
+          "Value": "F15"
+        },
+        {
+          "Key": "Комплектация",
+          "Value": "ACENTA"
+        },
+        {
+          "Key": "Двигатель",
+          "Value": "Euro 4"
+        },
+        {
+          "Key": "Трансмиссия",
+          "Value": "M-CVT"
+        },
+        {
+          "Key": "Мощность",
+          "Value": "187,4 л.с., 139,74 кВт."
+        },
+        {
+          "Key": "Крутящий момент",
+          "Value": "24,47 кг/м, 240 Н/м"
+        },
+        {
+          "Key": "Количество дверей",
+          "Value": "5"
+        },
+        {
+          "Key": "Цвет кузова",
+          "Value": "NAH - RED PM"
+        },
+        {
+          "Key": "Цвет салона",
+          "Value": "R - RED"
+        },
+        {
+          "Key": "Дата производства",
+          "Value": "09.2011"
+        },
+        {
+          "Key": "Начало производства",
+          "Value": "2010"
+        },
+        {
+          "Key": "Страна происхождения",
+          "Value": "Japan"
+        },
+        {
+          "Key": "Рынок сбыта",
+          "Value": "EU"
+        },
+        {
+          "Key": "Производитель",
+          "Value": "Nissan Motor Co Ltd (Tochigi Plant)"
+        }
+      ],
+      "NotAllImage": false,
+      "ImageList": [
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/ea8cc20f-512d-49c4-a35b-569fc0d7e255.jpg?width=750&height=450"
+        },
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/a54afe15-23da-4f30-a433-4740bea484a2.jpg?width=750&height=450"
+        },
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/ee84ac10-cf0b-484c-8ace-877000b13023.jpg?width=750&height=450"
+        },
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/d5402e81-ca15-4605-ab76-17e545807863.jpg?width=750&height=450"
+        },
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/60d954a2-2116-4479-9586-84e92b4b3084.jpg?width=750&height=450"
+        },
+        {
+          "Caption": null,
+          "Url": "https://cdn3.tronk.info/static/imagegn/358b40b7-63f5-4a73-8501-2ce0e5a72062.jpg?width=750&height=450"
+        },
+        {
+          "Caption": "Nissan Juke, 30.08.2020 09:35",
+          "Url": "https://cdn3.tronk.info/static/imagegn/6b6926a7-d693-475b-929d-7c2dcc7a643e.jpg?width=750&height=450"
+        },
+        {
+          "Caption": "Nissan Juke, 23.01.2022 15:05",
+          "Url": "https://cdn3.tronk.info/static/imagegn/992ed127-07b3-41e9-ada5-ee4e453b22fe.jpg?width=750&height=450"
+        }
+      ],
+      "SudActList": [],
+      "ArbitrList": null,
+      "ParkonData": null,
+      "ParkonTotal": 0,
+      "RomVinItems": null,
+      "Version": 3,
+      "NotAllOffers": false,
+      "HeavyVehicleLicenses": null,
+      "ActualLeasing": false,
+      "LeasingItems": null,
+      "LeasingInfo": null,
+      "RepairsItems": {
+        "Count": 0,
+        "Rows": null
+      },
+      "Customs": null,
+      "CustomsItems": null,
+      "Carsharing": null,
+      "Wilgood": null,
+      "Fitservice": null,
+      "STOData": null,
+      "ServicesData": {
+        "Total": 0,
+        "DataSet": [],
+        "ServiceHistory": []
+      },
+      "Stopxam": null,
+      "Recalls": {
+        "Recalls": null,
+        "Total": 0
+      },
+      "Bankrot": null,
+      "BusInfo": null,
+      "TruckPass": null,
+      "ParkingFine": null,
+      "InsuranceCase": null,
+      "Autopodbor": [],
+      "DiagnosticCards": null,
+      "Auctions": {
+        "TorgiRF": null,
+        "Other": null
+      },
+      "AvgMarket": {
+        "PriceMax": 1370000,
+        "PriceMin": 815000,
+        "PriceAvg": 1046360,
+        "DistanceAvg": 148786,
+        "Marka": "NISSAN",
+        "Model": "JUKE",
+        "Year": 2011,
+        "Offers": [
+          {
+            "Distance": 196666,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Республика Крым",
+            "City": "Севастополь",
+            "Url": "https://auto.drom.ru/sevastopol/nissan/juke/432943046.html",
+            "CreDate": "2025-08-28T21:10:12",
+            "Price": 1290000
+          },
+          {
+            "Distance": 160000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Кемеровская обл.",
+            "City": "Новокузнецк",
+            "Url": "https://www.avito.ru/novokuznetsk/avtomobili/nissan_juke_1.6_cvt_2011_160_000_km_7599947613",
+            "CreDate": "2025-08-28T19:46:20",
+            "Price": 899000
+          },
+          {
+            "Distance": 85318,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Волгоградская область",
+            "City": "Волгоград",
+            "Url": "https://auto.drom.ru/volgograd/nissan/juke/753552592.html",
+            "CreDate": "2025-08-28T19:18:42",
+            "Price": 1018000
+          },
+          {
+            "Distance": 142000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Новосибирская область",
+            "City": "Новосибирск",
+            "Url": "https://auto.drom.ru/novosibirsk/nissan/juke/417361575.html",
+            "CreDate": "2025-08-28T19:18:02",
+            "Price": 1180000
+          },
+          {
+            "Distance": 121000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Алтайский край",
+            "City": "Барнаул",
+            "Url": "https://auto.drom.ru/barnaul/nissan/juke/53817414.html",
+            "CreDate": "2025-08-28T18:07:08",
+            "Price": 1255000
+          },
+          {
+            "Distance": 85318,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Волгоградская обл.",
+            "City": "Волгоград",
+            "Url": "https://www.avito.ru/volgograd/avtomobili/nissan_juke_1.6_cvt_2011_85_318_km_7434795133",
+            "CreDate": "2025-08-28T17:28:12",
+            "Price": 1018000
+          },
+          {
+            "Distance": 85318,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Волгоград",
+            "City": "Волгоград",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1128311616-e31a198f/",
+            "CreDate": "2025-08-28T16:45:24",
+            "Price": 1018000
+          },
+          {
+            "Distance": 119000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Рязань",
+            "City": "Рязань",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1129255768-ec5f8af3/",
+            "CreDate": "2025-08-28T16:40:50",
+            "Price": 995000
+          },
+          {
+            "Distance": 192119,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Приморский край",
+            "City": "Владивосток",
+            "Url": "https://auto.drom.ru/vladivostok/nissan/juke/303020508.html",
+            "CreDate": "2025-08-28T14:56:29",
+            "Price": 815000
+          },
+          {
+            "Distance": 119000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Рязанская обл.",
+            "City": "Рязань",
+            "Url": "https://www.avito.ru/ryazan/avtomobili/nissan_juke_1.6_cvt_2011_119_000_km_7566988282",
+            "CreDate": "2025-08-28T14:56:05",
+            "Price": 1000000
+          },
+          {
+            "Distance": 189000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Санкт-Петербург",
+            "City": "Парголово",
+            "Url": "https://www.avito.ru/sankt-peterburg/avtomobili/nissan_juke_1.6_cvt_2011_189_000_km_7587089322",
+            "CreDate": "2025-08-28T14:50:43",
+            "Price": 990000
+          },
+          {
+            "Distance": 130000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Камчатский край",
+            "City": "Петропавловск-Камчатский",
+            "Url": "https://auto.drom.ru/petropavlovsk-kamchatskiy/nissan/juke/610766234.html",
+            "CreDate": "2025-08-28T12:02:18",
+            "Price": 1175000
+          },
+          {
+            "Distance": 106543,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 7,
+            "Region": "Хабаровский край",
+            "City": "Хабаровск",
+            "Url": "https://auto.drom.ru/habarovsk/nissan/juke/457411333.html",
+            "CreDate": "2025-08-28T11:11:42",
+            "Price": 960000
+          },
+          {
+            "Distance": 133200,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Саратовская область",
+            "City": "Саратов",
+            "Url": "https://auto.drom.ru/saratov/nissan/juke/284892507.html",
+            "CreDate": "2025-08-28T10:31:09",
+            "Price": 920000
+          },
+          {
+            "Distance": 133200,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 1,
+            "Region": "Саратовская обл.",
+            "City": "Саратов",
+            "Url": "https://www.avito.ru/saratov/avtomobili/nissan_juke_1.6_cvt_2011_133_200_km_7562933311",
+            "CreDate": "2025-08-28T09:26:43",
+            "Price": 920000
+          },
+          {
+            "Distance": 152000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Смоленская обл.",
+            "City": "Смоленск",
+            "Url": "https://www.avito.ru/smolensk/avtomobili/nissan_juke_1.6_mt_2011_152_000_km_7488058702",
+            "CreDate": "2025-08-28T09:16:47",
+            "Price": 900000
+          },
+          {
+            "Distance": 196666,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Севастополь",
+            "City": "Севастополь",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1129317270-404a3c3a/",
+            "CreDate": "2025-08-28T08:24:53",
+            "Price": 1290000
+          },
+          {
+            "Distance": 157000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Петрозаводск",
+            "City": "Петрозаводск",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1127667225-6d8da11c/",
+            "CreDate": "2025-08-28T06:20:14",
+            "Price": 955000
+          },
+          {
+            "Distance": 132370,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Новосибирская область",
+            "City": "Новосибирск",
+            "Url": "https://auto.drom.ru/novosibirsk/nissan/juke/458881786.html",
+            "CreDate": "2025-08-28T05:28:15",
+            "Price": 1150000
+          },
+          {
+            "Distance": 172000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Новосибирская область",
+            "City": "Новосибирск",
+            "Url": "https://auto.drom.ru/novosibirsk/nissan/juke/158903886.html",
+            "CreDate": "2025-08-28T05:09:12",
+            "Price": 1097000
+          },
+          {
+            "Distance": 153537,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Москва",
+            "City": "Москва",
+            "Url": "https://used-cars.ru/auto/nissan/nissan-juke-16-cvt-190-ls-4wd-10153246",
+            "CreDate": "2025-08-28T03:41:34",
+            "Price": 1120000
+          },
+          {
+            "Distance": 207246,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Приморский край",
+            "City": "Владивосток",
+            "Url": "https://auto.drom.ru/vladivostok/nissan/juke/791690494.html",
+            "CreDate": "2025-08-28T02:34:41",
+            "Price": 860000
+          },
+          {
+            "Distance": 131000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Омская область",
+            "City": "Омск",
+            "Url": "https://auto.drom.ru/omsk/nissan/juke/736126268.html",
+            "CreDate": "2025-08-28T00:43:14",
+            "Price": 1060000
+          },
+          {
+            "Distance": 153537,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Воронежская область",
+            "City": "Воронеж",
+            "Url": "https://auto.drom.ru/voronezh/nissan/juke/129102644.html",
+            "CreDate": "2025-08-28T00:15:21",
+            "Price": 1120000
+          },
+          {
+            "Distance": 155000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Красноярский край",
+            "City": "Красноярск",
+            "Url": "https://auto.drom.ru/krasnoyarsk/nissan/juke/107022749.html",
+            "CreDate": "2025-08-28T00:14:15",
+            "Price": 1200000
+          },
+          {
+            "Distance": 153537,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Воронеж",
+            "City": "Воронеж",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1129016132-cc1941a8/",
+            "CreDate": "2025-08-27T19:36:30",
+            "Price": 1120000
+          },
+          {
+            "Distance": 340000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 5,
+            "Region": "Омская область",
+            "City": "Омск",
+            "Url": "https://auto.drom.ru/omsk/nissan/juke/812354045.html",
+            "CreDate": "2025-08-27T19:25:57",
+            "Price": 869000
+          },
+          {
+            "Distance": 80000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 1,
+            "Region": "50",
+            "City": "Раменское",
+            "Url": "https://www.avito.ru/ramenskoe/avtomobili/nissan_juke_1.6_mt_2011_80_000_km_7605070159",
+            "CreDate": "2025-08-27T19:06:18",
+            "Price": 1370000
+          },
+          {
+            "Distance": 139550,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Краснодарский край",
+            "City": "Краснодар",
+            "Url": "https://www.avito.ru/krasnodar/avtomobili/nissan_juke_1.6_cvt_2011_139_550_km_7616397515",
+            "CreDate": "2025-08-27T18:12:31",
+            "Price": 1049000
+          },
+          {
+            "Distance": 153537,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Воронежская обл.",
+            "City": "Воронеж",
+            "Url": "https://www.avito.ru/voronezh/avtomobili/nissan_juke_1.6_cvt_2011_153_537_km_7541720037",
+            "CreDate": "2025-08-27T16:29:53",
+            "Price": 1120000
+          },
+          {
+            "Distance": 140000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 1,
+            "Region": "Москва",
+            "City": "Москва",
+            "Url": "https://auto.ru/cars/used/sale/nissan/juke/1129380932-a8886e0a/",
+            "CreDate": "2025-08-27T13:25:05",
+            "Price": 1100000
+          },
+          {
+            "Distance": 107060,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Иркутская область",
+            "City": "Иркутск",
+            "Url": "https://auto.drom.ru/irkutsk/nissan/juke/640066762.html",
+            "CreDate": "2025-08-27T13:00:53",
+            "Price": 1260000
+          },
+          {
+            "Distance": 150000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Новосибирская область",
+            "City": "Новосибирск",
+            "Url": "https://auto.drom.ru/novosibirsk/nissan/juke/549245094.html",
+            "CreDate": "2025-08-27T11:54:33",
+            "Price": 950000
+          },
+          {
+            "Distance": 107060,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Иркутская обл.",
+            "City": "Иркутск",
+            "Url": "https://www.avito.ru/irkutsk/avtomobili/nissan_juke_1.6_cvt_2011_107_060_km_7586377839",
+            "CreDate": "2025-08-27T10:27:52",
+            "Price": 1260000
+          },
+          {
+            "Distance": 98000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Приморский край",
+            "City": "Фокино",
+            "Url": "https://auto.drom.ru/fokino/nissan/juke/787139853.html",
+            "CreDate": "2025-08-27T07:16:33",
+            "Price": 1000000
+          },
+          {
+            "Distance": 96000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Сахалинская область",
+            "City": "Южно-Сахалинск",
+            "Url": "https://auto.drom.ru/yuzhno-sakhalinsk/nissan/juke/938014192.html",
+            "CreDate": "2025-08-27T06:22:08",
+            "Price": 950000
+          },
+          {
+            "Distance": 190000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Магаданская область",
+            "City": "Магадан",
+            "Url": "https://auto.drom.ru/magadan/nissan/juke/596352161.html",
+            "CreDate": "2025-08-27T01:15:23",
+            "Price": 1250000
+          },
+          {
+            "Distance": 170000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 7,
+            "Region": "Приморский край",
+            "City": "Находка",
+            "Url": "https://nakhodka.drom.ru/nissan/juke/48853436.html",
+            "CreDate": "2025-08-27T00:13:05",
+            "Price": 830000
+          },
+          {
+            "Distance": 140000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Краснодарский край",
+            "City": "Краснодар",
+            "Url": "https://auto.drom.ru/krasnodar/nissan/juke/762557631.html",
+            "CreDate": "2025-08-26T19:55:54",
+            "Price": 895000
+          },
+          {
+            "Distance": 103000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Амурская обл.",
+            "City": "Тыгда",
+            "Url": "https://www.avito.ru/magdagachi/avtomobili/nissan_juke_1.6_cvt_2011_103_000_km_7569495034",
+            "CreDate": "2025-08-26T18:40:56",
+            "Price": 1100000
+          },
+          {
+            "Distance": 140000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 1,
+            "Region": "Республика Адыгея (Адыгея)",
+            "City": "пгт. Яблоновский",
+            "Url": "https://www.avito.ru/yablonovskiy/avtomobili/nissan_juke_1.6_cvt_2011_140_000_km_7470067897",
+            "CreDate": "2025-08-26T16:13:46",
+            "Price": 895000
+          },
+          {
+            "Distance": 126224,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Хабаровский край",
+            "City": "Советская Гавань",
+            "Url": "https://www.avito.ru/sovetskaya_gavan/avtomobili/nissan_juke_1.6_cvt_2011_126_224_km_4259560987",
+            "CreDate": "2025-08-26T15:06:29",
+            "Price": 900000
+          },
+          {
+            "Distance": 167000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Краснодарский край",
+            "City": "Славянск-На-Кубани",
+            "Url": "https://auto.drom.ru/slavyansk-na-kubani/nissan/juke/738619888.html",
+            "CreDate": "2025-08-26T13:26:44",
+            "Price": 1150000
+          },
+          {
+            "Distance": 196000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Томская область",
+            "City": "Томск",
+            "Url": "https://auto.drom.ru/tomsk/nissan/juke/136932383.html",
+            "CreDate": "2025-08-26T12:14:34",
+            "Price": 1098000
+          },
+          {
+            "Distance": 196000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Томская обл.",
+            "City": "Томск",
+            "Url": "https://www.avito.ru/tomsk/avtomobili/nissan_juke_1.6_cvt_2011_196_000_km_7368534406",
+            "CreDate": "2025-08-26T11:20:27",
+            "Price": 1098000
+          },
+          {
+            "Distance": 167000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 2,
+            "Region": "Краснодарский край",
+            "City": "Славянск-на-Кубани",
+            "Url": "https://www.avito.ru/slavyansk-na-kubani/avtomobili/nissan_juke_1.6_cvt_2011_167_000_km_7593555866",
+            "CreDate": "2025-08-26T10:52:03",
+            "Price": 1150000
+          },
+          {
+            "Distance": 165341,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 3,
+            "Region": "Челябинская обл.",
+            "City": "Челябинск",
+            "Url": "https://www.avito.ru/chelyabinsk/avtomobili/nissan_juke_1.6_mt_2011_165_341_km_7545987802",
+            "CreDate": "2025-08-26T09:41:10",
+            "Price": 949000
+          },
+          {
+            "Distance": 235000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Иркутская область",
+            "City": "Иркутск",
+            "Url": "https://auto.drom.ru/irkutsk/nissan/juke/649331937.html",
+            "CreDate": "2025-08-26T08:49:44",
+            "Price": 850000
+          },
+          {
+            "Distance": 160000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 4,
+            "Region": "Челябинская обл.",
+            "City": "Челябинск",
+            "Url": "https://www.avito.ru/chelyabinsk/avtomobili/nissan_juke_1.6_cvt_2011_160_000_km_7598494446",
+            "CreDate": "2025-08-26T08:21:32",
+            "Price": 900000
+          },
+          {
+            "Distance": 111000,
+            "Year": 2011,
+            "Marka": "NISSAN",
+            "Model": "Juke",
+            "OwnerCount": 0,
+            "Region": "Приморский край",
+            "City": "Владивосток",
+            "Url": "https://auto.drom.ru/vladivostok/nissan/juke/563972762.html",
+            "CreDate": "2025-08-26T04:58:41",
+            "Price": 1000000
+          }
+        ]
+      },
+      "InterpolData": null,
+      "Favicon": "/favicons/nissan.ico",
+      "RegionGosnomer": "Томская область"
+    }
+  },
+  "Msg": null,
+  "StartRequest": "2025-08-28T22:00:52.6698421+03:00",
+  "CompleteRequest": "2025-08-28T22:00:52.7323226+03:00",
+  "Error": false,
+  "Task": {
+    "ID": 30725035,
+    "Status": 1,
+    "StartGenerationDate": "2025-08-28T21:59:46",
+    "CompleteGenerationDate": "2025-08-28T22:00:15",
+    "Percent": 99,
+    "StatusServices": [
+      {
+        "Service": 1,
+        "ServiceName": "История регистраций",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": false
+      },
+      {
+        "Service": 2,
+        "ServiceName": "ДТП",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": false
+      },
+      {
+        "Service": 3,
+        "ServiceName": "Розыск",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": false
+      },
+      {
+        "Service": 4,
+        "ServiceName": "ЕАИСТО",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": true
+      },
+      {
+        "Service": 5,
+        "ServiceName": "Штрафы",
+        "Date": "2025-08-28T22:00:38.2709695+03:00",
+        "Attempts": 1,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": false
+      },
+      {
+        "Service": 6,
+        "ServiceName": "Ограничения",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": false
+      },
+      {
+        "Service": 7,
+        "ServiceName": "Залоги",
+        "Date": "2025-08-28T22:00:15",
+        "Attempts": 0,
+        "IsCancel": false,
+        "IsComplete": true,
+        "IsOffline": true
+      }
+    ]
+  },
+  "RequestParams": {
+    "vin": null,
+    "gosnumber": null,
+    "frame": null,
+    "id": "30725035"
+  }
+}
