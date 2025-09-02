@@ -2736,7 +2736,6 @@ app.post('/yookassa/webhook', express.json({ type: '*/*' }), async (req, res) =>
     } catch (e) {
       console.error('Не удалось запустить Telegram-бота:', e?.message || e);
     }
-
     process.once('SIGINT', () => bot.stop('SIGINT'));
     process.once('SIGTERM', () => bot.stop('SIGTERM'));
   })();
