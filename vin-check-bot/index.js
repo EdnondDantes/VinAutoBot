@@ -871,7 +871,7 @@ const RF_FREE_FILE = path.resolve(__dirname, 'rf-free-usage.json');
 const RF_FREE_COOLDOWN_MS = Number(process.env.RF_FREE_COOLDOWN_MS || 24 * 60 * 60 * 1000); // 24 часа
 // Канал с подпиской. Можно передать @username или полную ссылку t.me/...
 const RF_SUBS_CHANNEL =
-  process.env.RF_SUBS_CHANNEL ||
+  FREE_RF_CHANNEL_USERNAME ||
   (() => {
     const raw = 'https://t.me/chan122334';
     const m = raw.match(/t\.me\/([A-Za-z0-9_]+)/);
@@ -900,13 +900,73 @@ if (!BOT_TOKEN) {
 
 const bot = new Telegraf(BOT_TOKEN);
 
-/* ========================== BRANDS/VIN ========================== */
+/* ========================== BRAND SUPPORT ROUTING ========================== */
+// Синонимы и нормализация имён брендов к виду из BRANDS_LIST
+const BRAND_SYNONYMS = new Map([
+  ['LandRover', 'Land Rover'],
+  ['Mercedes-Benz', 'Mercedes'],
+  ['VW', 'Volkswagen'],
+  ['Skoda', 'SKODA'],
+  ['Seat', 'SEAT'],
+  ['SsangYong', 'Ssang Young'],
+  ['Ssang Yong', 'Ssang Young'],
+]);
+function normalizeBrand(name) {
+  if (!name) return null;
+  let n = String(name).trim().replace(/\s+/g, ' ');
+  if (BRAND_SYNONYMS.has(n)) n = BRAND_SYNONYMS.get(n);
+  // подгоняем регистр/написание под BRANDS_LIST, если совпало по == без регистра
+  const fromList = BRANDS_LIST.find(b => b.toLowerCase() === n.toLowerCase());
+  return fromList || n;
+}
+
+// Поддерживаемые наборы
+const SUPPORTED_EQUIPMENT = new Set([
+  'Alfa Romeo','Alpine','Lamborghini','BMW','BMW ЭЛЕКТРО','BMW MOTO','Dacia','Fiat','Opel',
+  'Chevrolet','Jeep','Mini','Volvo','Toyota','Lexus','Infiniti','Jaguar','Hyundai','Citroen',
+  'Land Rover','KIA','Mitsubishi','Nissan','Mercedes','Ford','Renault','Peugeot','DS','Suzuki',
+  'Honda','Rolls-Royce','Cadillac','GMC','LINCOLN','RAM','Genesis','Lancia','Buick','Ssang Young'
+]);
+
+const SUPPORTED_OEM_BASE = new Set([
+  'Alfa Romeo','Jeep','Mazda','Dodge','Fiat','Infiniti','Jaguar','Land Rover','Lexus','Nissan',
+  'Opel','Chevrolet','RAM','Toyota','Ford','Porsche','Hyundai','Genesis','Lancia','Smart',
+  'Mercedes','Dacia','Renault','DS','Peugeot','Citroen'
+]);
+const VW_GROUP_FOR_OEM  = new Set(['Volkswagen','Audi','SEAT','SKODA','Bentley','Cupra']);
+const BMW_GROUP_FOR_OEM = new Set(['BMW','BMW ЭЛЕКТРО','BMW MOTO','Rolls-Royce','Mini','Alpine']);
+const SUPPORTED_OEM = new Set([...SUPPORTED_OEM_BASE, ...VW_GROUP_FOR_OEM, ...BMW_GROUP_FOR_OEM]);
+
+const MSG_EQUIP_UNSUPPORTED = (brand) =>
+  `Марка «${brand}» не поддерживается для проверки комплектации. Выберите другой вариант ниже.`;
+const MSG_OEM_UNSUPPORTED = (brand) =>
+  `Марка «${brand}» не поддерживается для проверки истории по дилерской базе. Выберите другой вариант ниже.`;
+
+const OEM_DEFAULT_CMD = 'check_data_multibr_zapros';
+const OEM_VW_CMD      = 'check_elsa_pro_full';
+const OEM_BMW_CMD     = 'check_data_bmw_full';
+
+function isBrandSupportedForEquipment(brand) {
+  const b = normalizeBrand(brand);
+  return !!b && SUPPORTED_EQUIPMENT.has(b);
+}
+function isBrandSupportedForOem(brand) {
+  const b = normalizeBrand(brand);
+  return !!b && SUPPORTED_OEM.has(b);
+}
+function chooseOemCommand(brand) {
+  const b = normalizeBrand(brand);
+  if (VW_GROUP_FOR_OEM.has(b)) return OEM_VW_CMD;
+  if (BMW_GROUP_FOR_OEM.has(b)) return OEM_BMW_CMD;
+  return OEM_DEFAULT_CMD;
+}
+
 const INVALID_VIN_CHARS = /[IOQ]/i;
 const detectBrandFromVin = (vin) => {
   if (!vin || vin.length < 3) return null;
   if (INVALID_VIN_CHARS.test(vin)) return null;
   const wmi = vin.slice(0, 3).toUpperCase();
-  const brand = WMI_TO_BRAND[wmi] || null;
+  const brand = normalizeBrand(WMI_TO_BRAND[wmi] || null);
   if (brand && ALLOWED_BRANDS.has(brand)) return brand;
   return null;
 };
@@ -1239,18 +1299,7 @@ async function generateAndSendTronkPdf({ chatId, vin, payload, inlineImages = (p
     const pdfPath = path.resolve(__dirname, 'uploads', pdfName);
     try { fsSync.mkdirSync(path.dirname(pdfPath), { recursive: true }); } catch {}
 
-    const browser = await puppeteer.launch({
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
-      args: [
-        '--headless=new',
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--disable-features=UseOzonePlatform',
-        '--use-gl=swiftshader',
-      ],
-    });
+    const browser = await puppeteer.launch({ args:['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: 'networkidle0' });
     await page.pdf({
@@ -2151,13 +2200,32 @@ async function onPaymentAuthorized({ chatId, vin, flow, payment }) {
   try {
     if (flow !== 'vagvin_equipment' && flow !== 'vagvin_oem') return;
 
-    const command_str = (flow === 'vagvin_equipment') ? 'check_multibr_pr_kod' : 'check_data_multibr_zapros';
-    const marka = payment?.metadata?.marka || null;
+    let command_str;
+    let marka = normalizeBrand(payment?.metadata?.marka || null);
 
     if (!vin || !marka) {
       await bot.telegram.sendMessage(chatId, 'Оплата авторизована, но не хватает данных (VIN/марка). Авторизацию отменяю — деньги не спишутся.');
       try { await ykcCancelPayment(payment.id); } catch (e) { console.error('[YKC cancel] err', e?.message); }
       return;
+    }
+    if (flow === 'vagvin_equipment') {
+      if (!isBrandSupportedForEquipment(marka)) {
+        await bot.telegram.sendMessage(chatId, MSG_EQUIP_UNSUPPORTED(marka));
+        await bot.telegram.sendMessage(chatId, 'Отменяю авторизацию — деньги не спишутся.');
+        try { await ykcCancelPayment(payment.id); } catch {}
+        await sendPostMenuByChat(chatId);
+        return;
+      }
+      command_str = 'check_multibr_pr_kod';
+    } else {
+      if (!isBrandSupportedForOem(marka)) {
+        await bot.telegram.sendMessage(chatId, MSG_OEM_UNSUPPORTED(marka));
+        await bot.telegram.sendMessage(chatId, 'Отменяю авторизацию — деньги не спишутся.');
+        try { await ykcCancelPayment(payment.id); } catch {}
+        await sendPostMenuByChat(chatId);
+        return;
+      }
+      command_str = chooseOemCommand(marka);
     }
 
     await bot.telegram.sendMessage(chatId, `Оплата авторизована ✅. Отправляю запрос (${flow === 'vagvin_equipment' ? 'комплектация' : 'дилерская история'})…`);
@@ -2300,6 +2368,17 @@ bot.action(/brand_pick_(\d+)/, async (ctx) => {
     return sendTypeSelection(ctx);
   }
   const { vin, service } = pending;
+  const brandNorm = normalizeBrand(brand);
+  if (service === 'equipment' && !isBrandSupportedForEquipment(brandNorm)) {
+    await ctx.reply(MSG_EQUIP_UNSUPPORTED(brandNorm));
+    await sendPostMenu(ctx);
+    return;
+  }
+  if (service === 'oem_history' && !isBrandSupportedForOem(brandNorm)) {
+    await ctx.reply(MSG_OEM_UNSUPPORTED(brandNorm));
+    await sendPostMenu(ctx);
+    return;
+  }
 
   const flow  = (service === 'equipment') ? 'vagvin_equipment' : 'vagvin_oem';
   const price = (service === 'equipment') ? YKC_PRICE_VAG_EQUIP : YKC_PRICE_VAG_OEM;
@@ -2308,7 +2387,7 @@ bot.action(/brand_pick_(\d+)/, async (ctx) => {
   try {
     const { confirmationUrl } = await ykcCreatePayment({
       chatId, vin, flow, amount: price, description: `${title} — VIN ${vin}`,
-      extraMeta: { marka: brand }, capture: false
+      extraMeta: { marka: brandNorm }, capture: false
     });
     await showPaymentPrompt(ctx, { title, vin, amount: price, url: confirmationUrl, backAction: 'back_to_type' });
   } catch (e) {
@@ -2382,10 +2461,16 @@ bot.on('text', async (ctx) => {
     setState(chatId, { processing: false, lastVin: vin, stage: 'processing_equipment', pendingBrandSelection: null, lastVagService: 'equipment' });
     const detected = detectBrandFromVin(vin);
     if (detected) {
+      const brand = normalizeBrand(detected);
+      if (!isBrandSupportedForEquipment(brand)) {
+        await ctx.reply(MSG_EQUIP_UNSUPPORTED(brand));
+        await sendPostMenu(ctx);
+        return;
+      }
       try {
         const { confirmationUrl } = await ykcCreatePayment({
           chatId, vin, flow: 'vagvin_equipment', amount: YKC_PRICE_VAG_EQUIP,
-          description: `Комплектация по VIN  — VIN ${vin}`, extraMeta: { marka: detected }, capture: false
+          description: `Комплектация по VIN  — VIN ${vin}`, extraMeta: { marka: brand }, capture: false
         });
         await showPaymentPrompt(ctx, { title: 'Комплектация ', vin, amount: YKC_PRICE_VAG_EQUIP, url: confirmationUrl, backAction: 'back_to_type' });
       } catch (e) { await ctx.reply('Не удалось создать платёж. Попробуйте ещё раз.'); }
@@ -2400,10 +2485,16 @@ bot.on('text', async (ctx) => {
     setState(chatId, { processing: false, lastVin: vin, stage: 'processing_oem_history', pendingBrandSelection: null, lastVagService: 'oem_history' });
     const detected = detectBrandFromVin(vin);
     if (detected) {
+      const brand = normalizeBrand(detected);
+      if (!isBrandSupportedForOem(brand)) {
+        await ctx.reply(MSG_OEM_UNSUPPORTED(brand));
+        await sendPostMenu(ctx);
+        return;
+      }
       try {
         const { confirmationUrl } = await ykcCreatePayment({
           chatId, vin, flow: 'vagvin_oem', amount: YKC_PRICE_VAG_OEM,
-          description: `История по дилерской базе  — VIN ${vin}`, extraMeta: { marka: detected }, capture: false
+          description: `История по дилерской базе  — VIN ${vin}`, extraMeta: { marka: brand }, capture: false
         });
         await showPaymentPrompt(ctx, { title: 'История по дилерской базе ', vin, amount: YKC_PRICE_VAG_OEM, url: confirmationUrl, backAction: 'back_to_type' });
       } catch (e) { await ctx.reply('Не удалось создать платёж. Попробуйте ещё раз.'); }
@@ -2831,6 +2922,7 @@ app.post('/yookassa/webhook', express.json({ type: '*/*' }), async (req, res) =>
         ? 'Полная проверка по РФ '
         : (f === 'vagvin_equipment' ? 'Комплектация ' : (f === 'vagvin_oem' ? 'История по дилерской базе ' : f || 'оплата'));
       if (chatId) {
+        // здесь можно отправить уведомление об отмене, если требуется
       }
       inflightPayments.delete(paymentId);
       return res.json({ ok:true });
