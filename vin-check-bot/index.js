@@ -1377,17 +1377,18 @@ const sendTypeSelection = async (ctx) => {
   setState(chatId, { stage: 'choose_type', processing: false, pendingBrandSelection: null });
   await ensureStartedCommands(chatId);
   await ctx.reply('Выберите тип проверки:', Markup.inlineKeyboard([
-    [Markup.button.callback('Проверка комплектации по VIN', 'type_equipment')],
+    [Markup.button.callback('Полная проверка истории авто по РФ', 'type_history')],
     [Markup.button.callback('Проверка истории по дилерской базе', 'type_oem_history')],
-    [Markup.button.callback('Полная проверка истории авто по РФ', 'type_history')]
+    [Markup.button.callback('Проверка комплектации', 'type_equipment')]
   ]));
 };
 async function sendTypeSelectionByChat(chatId) {
   setState(chatId, { stage: 'choose_type', processing: false, pendingBrandSelection: null });
   const kb = Markup.inlineKeyboard([
-    [Markup.button.callback('Проверка комплектации по VIN', 'type_equipment')],
+    [Markup.button.callback('Полная проверка истории авто по РФ', 'type_history')],
     [Markup.button.callback('Проверка истории по дилерской базе', 'type_oem_history')],
-    [Markup.button.callback('Полная проверка истории авто по РФ', 'type_history')]
+    [Markup.button.callback('Проверка комплектации по VIN', 'type_equipment')]
+
   ]);
   await ensureStartedCommands(chatId);
   await bot.telegram.sendMessage(chatId, 'Выберите тип проверки автомобиля:', kb);
@@ -1407,11 +1408,11 @@ const buildPostMenuKeyboard = (lastVagService, rfNeedsNewVin = false) => {
 };
 const sendPostMenu = async (ctx, { rfNeedsNewVin = false } = {}) => {
   const st = getState(ctx.chat.id);
-  await ctx.reply('Что дальше сделать?', buildPostMenuKeyboard(st.lastVagService, rfNeedsNewVin));
+  await ctx.reply('Выберите:', buildPostMenuKeyboard(st.lastVagService, rfNeedsNewVin));
 };
 async function sendPostMenuByChat(chatId, { rfNeedsNewVin = false } = {}) {
   const st = getState(chatId);
-  await bot.telegram.sendMessage(chatId, 'Что дальше сделать?', buildPostMenuKeyboard(st.lastVagService, rfNeedsNewVin));
+  await bot.telegram.sendMessage(chatId, 'Выберите:', buildPostMenuKeyboard(st.lastVagService, rfNeedsNewVin));
 }
 
 /* === Пост-меню после ПОЛНОЙ РФ-проверки === */
@@ -1420,9 +1421,9 @@ const buildPostMenuAfterRF = () => Markup.inlineKeyboard([
   [Markup.button.callback('Проверка комплектации по VIN', 'type_equipment')],
   [Markup.button.callback('Ввести ещё один VIN (полная проверка)', 'full_check_rf_newvin')]
 ]);
-const sendPostMenuAfterRF = async (ctx) => { await ctx.reply('Что дальше сделать?', buildPostMenuAfterRF()); };
+const sendPostMenuAfterRF = async (ctx) => { await ctx.reply('Выберите:', buildPostMenuAfterRF()); };
 async function sendPostMenuAfterRFByChat(chatId) {
-  await bot.telegram.sendMessage(chatId, 'Что дальше сделать?', buildPostMenuAfterRF());
+  await bot.telegram.sendMessage(chatId, 'Выберите:', buildPostMenuAfterRF());
 }
 
 /* === Проверка подписки на канал === */
@@ -2157,7 +2158,7 @@ async function onPaymentSucceeded({ chatId, vin, flow, payment }) {
 
       const prevState = await paymentsStore.get(payment.id);
       if (!prevState?.succeededAnnounced) {
-        await bot.telegram.sendMessage(chatId, 'Оплата получена ✅. Запрашиваю полный отчёт…\nВремя ожидания до 5 минут');
+        await bot.telegram.sendMessage(chatId, 'Оплата получена ✅. Запрашиваю полный отчёт…\nНам нужно немного времени, чтобы создать отчет.\nПока вы ожидаете, можете скоротать время и ознакомиться с интересными предложениями нашей компании:\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\nhttps://unityauto.ru/cars/ ');
         await paymentsStore.merge(payment.id, { succeededAnnounced: true });
       }
 
@@ -2184,7 +2185,7 @@ async function onPaymentSucceeded({ chatId, vin, flow, payment }) {
     }
 
     if (flow === 'vagvin_equipment' || flow === 'vagvin_oem') {
-      await bot.telegram.sendMessage(chatId, 'Списание подтверждено. Как только отчёт будет готов — пришлю сюда автоматически.');
+      await bot.telegram.sendMessage(chatId, '✅Успешно. Как только отчёт будет готов — пришлю сюда автоматически.');
       setState(chatId, { lastVagService: (flow === 'vagvin_equipment' ? 'equipment' : 'oem_history') });
       setState(chatId, { paymentMenu: null }); // закрываем текущее меню оплаты
       await sendPostMenuByChat(chatId, { rfNeedsNewVin: true });
@@ -2257,7 +2258,7 @@ async function onPaymentAuthorized({ chatId, vin, flow, payment }) {
     });
 
     if (cap.ok) {
-      await bot.telegram.sendMessage(chatId, 'Списание подтверждено. Как только отчёт будет готов — пришлю сюда автоматически.');
+      await bot.telegram.sendMessage(chatId, '✅ Успешно. Как только отчёт будет готов — пришлю сюда автоматически.');
       setState(chatId, { lastVagService: (flow === 'vagvin_equipment' ? 'equipment' : 'oem_history') });
       setState(chatId, { paymentMenu: null });
       await sendPostMenuByChat(chatId, { rfNeedsNewVin: true }); 
