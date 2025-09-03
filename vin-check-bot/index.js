@@ -1212,8 +1212,16 @@ async function generateAndSendTronkPdf({ chatId, vin, payload, inlineImages = (p
     try { fsSync.mkdirSync(path.dirname(pdfPath), { recursive: true }); } catch {}
 
     const browser = await puppeteer.launch({
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser',
-      args: ['--no-sandbox', '--disable-dev-shm-usage', '--no-zygote', '--disable-gpu']
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome-stable',
+      args: [
+        '--headless=new',              // если вдруг ругнётся — замените на '--headless'
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--disable-features=UseOzonePlatform', // ключевое: не использовать Ozone/GBM
+        '--use-gl=swiftshader',                 // софт-рендер
+      ],
     });
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: 'networkidle0' });
@@ -1292,17 +1300,17 @@ const sendTypeSelection = async (ctx) => {
   setState(chatId, { stage: 'choose_type', processing: false, pendingBrandSelection: null });
   await ensureStartedCommands(chatId);
   await ctx.reply('Выберите тип проверки:', Markup.inlineKeyboard([
-    [Markup.button.callback('Проверка комплектацип по VIN', 'type_equipment')],
+    [Markup.button.callback('Полная проверка истории авто по РФ   ', 'type_history')],
     [Markup.button.callback('Проверка истории по дилерской базе   ', 'type_oem_history')],
-    [Markup.button.callback('Полная проверка истории авто по РФ   ', 'type_history')]
+    [Markup.button.callback('Проверка комплектации', 'type_equipment')]
   ]));
 };
 async function sendTypeSelectionByChat(chatId) {
   setState(chatId, { stage: 'choose_type', processing: false, pendingBrandSelection: null });
   const kb = Markup.inlineKeyboard([
-    [Markup.button.callback('Проверка комплектацип по VIN', 'type_equipment')],
     [Markup.button.callback('Проверка истории по дилерской базе   ', 'type_oem_history')],
-    [Markup.button.callback('Полная проверка истории авто по РФ   ', 'type_history')]
+    [Markup.button.callback('Полная проверка истории авто по РФ   ', 'type_history')],
+    [Markup.button.callback('Проверка комплектации', 'type_equipment')]
   ]);
   await ensureStartedCommands(chatId);
   await bot.telegram.sendMessage(chatId, 'Выберите тип проверки автомобиля:', kb);
@@ -1346,7 +1354,7 @@ const sendMinimalVehicleInfo = async (ctx, vehicle) => {
     lines.push('', 'Найденные события:');
     vehicle.events.forEach((ev, i) => lines.push(`${i + 1}. ${ev}`));
   } else {
-    lines.push('', 'Серьёзных событий (ДТП/розыск/ограничения) не найдено.');
+    lines.push('', 'По данным из открытых источников, ДТП, розыск и ограничения не найдены.');
   }
   const text = lines.join('\n');
 
@@ -2358,13 +2366,13 @@ bot.on('text', async (ctx) => {
 
   /* 3) РФ (api-assist + vPIC) — карточка */
   setState(chatId, { processing: true, lastVin: vin, stage: 'processing' });
-  await ctx.reply('Запрашиваю данные в открытой российской базе ...');
+  await ctx.reply('Проверяю данный VIN по базе ГИБДД ...');
 
   try {
     let result;
     try { result = await apiAssistCheck(vin); }
     catch (e) {
-      await ctx.reply('Ошибка при обращении к открытой российской базе (сеть/timeout). Запускаю бесплатную проверку по другим каналам ......');
+      await ctx.reply('Сервер ГИБДД временно не доступен...');
       const v = await vpicDecode(vin);
       if (v.ok && v.report && Object.keys(v.report).length) {
         const lines = [`Отчёт по открытым базам по VIN ${vin}:`];
@@ -2396,7 +2404,7 @@ bot.on('text', async (ctx) => {
       return;
     } else {
       if (result.code === 403 || (result.raw && result.raw.error_code && (result.raw.error_code === 40304 || result.raw.error_code === 40305))) {
-        await ctx.reply('Запрос к открытым базам вернул ошибку доступа/лимита. Запускаю бесплатную проверку другим каналам...');
+        await ctx.reply('Сейчас сервер ГИБДД временно не доступен...');
         const v = await vpicDecode(vin);
         if (v.ok && v.report && Object.keys(v.report).length) {
           const lines = [`Отчёт по VIN ${vin}:`];
